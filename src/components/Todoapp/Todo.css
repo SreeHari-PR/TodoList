@@ -1,0 +1,144 @@
+/* .todo-container{
+    background: black;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5em 10px;
+    padding: 15px;
+    color: white;
+}
+.header{
+    font-size: 2em;
+    text-align: center;
+
+}
+.input-container{
+    background-color: black;
+    padding: 0.5em;
+    border-radius: 1em;
+    border: 2px solid yellow; 
+
+
+}
+.input{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 1px;
+    border-radius: 1em;
+    padding: .5em;
+    margin: 1em;
+    width: 80%;
+}
+.add-btn{
+    border-radius: 5px;
+    font-size: 2em;
+    margin: 2px;
+    padding: 0px 15px; 
+    border: none;
+    cursor: pointer;
+    color: black;
+    background-color: greenyellow;
+}
+.list-tasks{
+    font-size: 1.25em;
+    font-weight: bold;
+    font-style: italic;
+    color: yellow;
+    background-color: black;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+.delete-btn{
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 3px 5px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    float: right;
+    background-color:yellow;
+}
+  */
+  .todo-container {
+    background: black;
+    width: 90vw;
+    margin: 50px; /* Center the container horizontally */
+    border-radius: 10px; /* Adjust border radius for consistency */
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+}
+
+.header {
+    font-size: 2em;
+    margin-bottom: 20px; /* Add margin for spacing */
+    text-align: center; /* Center text */
+}
+
+.input-container {
+    display: flex; /* Use flexbox for input container */
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+    margin-bottom: 20px; /* Add margin for spacing */
+    width: 100%; /* Take full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.input {
+    flex: 1; /* Allow input to take remaining space */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(100% - 42px); /* Adjust width for padding and border */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.add-btn {
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding: 10px 20px; /* Adjust padding */
+    border: none;
+    cursor: pointer;
+    color: black;
+    background-color: greenyellow;
+    margin-left: 10px; /* Add margin to separate from input */
+}
+
+
+.list-tasks {
+    font-size: 1.25em;
+    font-weight: bold;
+    font-style: italic;
+    color: yellow;
+    background-color: black;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px; /* Add margin for spacing */
+    width: 100%; /* Take full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.delete-btn {
+    border-radius: 5px;
+    margin: 0px 5px;
+    padding: 2px 10px; /* Adjust padding */
+    border: none;
+    cursor: pointer;
+    color: black;
+    background-color: yellow;
+    float: right;
+}
+
+
