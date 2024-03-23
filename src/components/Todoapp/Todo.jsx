@@ -14,6 +14,11 @@ const Todo = () => {
     newTask.splice(index, 1);
     setTasks(newTask);
   };
+  const editTask = (index, newTitle) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].title = newTitle;
+    setTasks(updatedTasks);
+  };
 
   return (
     <>
@@ -27,6 +32,7 @@ const Todo = () => {
             <ListTasks
               task={task}
               removeTask={removeTask}
+              editTask={editTask}
               index={index}
               key={index}
             />
