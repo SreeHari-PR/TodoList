@@ -19,6 +19,11 @@ const Todo = () => {
     updatedTasks[index].title = newTitle;
     setTasks(updatedTasks);
   };
+  const toggleTaskCompletion = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].completed = !updatedTasks[index].completed;
+    setTasks(updatedTasks);
+  };
 
   return (
     <>
@@ -33,6 +38,7 @@ const Todo = () => {
               task={task}
               removeTask={removeTask}
               editTask={editTask}
+              toggleTaskCompletion={toggleTaskCompletion}
               index={index}
               key={index}
             />

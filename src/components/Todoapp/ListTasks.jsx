@@ -1,25 +1,7 @@
-import React from "react";
-import { useState } from "react";
 
-// function ListTasks({ task, index, removeTask }) {
-//   return (
-//     <>
-//       <div className="list-tasks">
-//         {task.title}
-//         <button
-//           onClick={() => {
-//             removeTask(index);
-//           }}
-//           className="delete-btn"
-//         >
-//           Delete
-//         </button>
-//       </div>
-//     </>
-//   );
-// }
+import React, { useState } from "react";
 
-function ListTasks({ task, index, removeTask, editTask }) {
+function ListTasks({ task, index, removeTask, editTask, toggleTaskCompletion }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(task.title);
 
@@ -31,9 +13,13 @@ function ListTasks({ task, index, removeTask, editTask }) {
   return (
     <>
       <div className="list-tasks">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => toggleTaskCompletion(index)}
+        />
         {isEditing ? (
           <>
-          <div className="input-edit-container">
             <input
               type="text"
               className="input-edit"
@@ -41,15 +27,22 @@ function ListTasks({ task, index, removeTask, editTask }) {
               onChange={(e) => setEditedTitle(e.target.value)}
             />
             <button className="save-btn" onClick={handleEdit}>Save</button>
-            </div>
           </>
         ) : (
           <>
-            <span>{task.title}</span>
-            <button className="delete-btn" onClick={() => setIsEditing(true)}>Edit</button>
-            <button className="delete-btn" onClick={() => removeTask(index)}>Delete</button>
+            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+              {task.title}
+            </span>
+            <button
+              className="delete-btn"
+              onClick={() => setIsEditing(true)}
+              disabled={task.completed} // Disable edit button if task is completed
+            >
+              Edit
+            </button>
           </>
         )}
+        <button className="delete-btn" onClick={() => removeTask(index)}>Delete</button>
       </div>
     </>
   );
