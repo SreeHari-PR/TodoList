@@ -19,7 +19,6 @@ function AddTask({ addTask }) {
         addTask(value);
         setValue(""); 
     };
-
     return (
         <>
             <div className='input-container'>
@@ -31,6 +30,7 @@ function AddTask({ addTask }) {
                     onChange={handleChange}
                 />
                 <button onClick={addItem} className='add-btn'>ADD</button>
+                
             </div>
             {error && <p className="error">{error}</p>} {/* Display error message if there's an error */}
         </>

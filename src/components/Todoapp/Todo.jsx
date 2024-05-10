@@ -6,7 +6,8 @@ import ListTasks from "./ListTasks";
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
   const addTask = (title) => {
-    const newTask = [...tasks, { title }];
+    const newTask = [{ title },...tasks];
+    console.log(newTask);
     setTasks(newTask);
   };
   const removeTask = (index) => {
